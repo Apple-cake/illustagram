@@ -1,0 +1,163 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.btn{
+  background-image: linear-gradient( rgba(0,0,0,0) 50%, rgb(199, 243, 254) 50%);
+  background-position: 0 0;
+  background-size: auto 200%;
+  transition: 0.5s;
+}
+.btn:hover {
+  background-position: 0 100%;
+  color: #fff;
+}
+
+
+.btn2 {
+  background-image: linear-gradient(to right, rgba(0,0,0,0) 50%, rgb(97, 221, 252) 50%);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+.btn2:hover {
+  background-position: -100% 0;
+  color: #fff;
+}
+
+
+
+.btn3 {
+  position: relative;
+  display: inline-block;
+  transition: 0.5s;
+  line-height: 38px;
+}
+.btn3::before, .btn3::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 0;
+  border-bottom: solid 2px #f35e39;
+  transition: 0.5s;
+}
+.btn3::before{
+  top: 0;
+}
+.btn3::after{
+  bottom: 0;
+}
+.btn3:hover::before, .btn3:hover::after {
+  width: 100%;
+}
+
+.btn4 {
+
+  background: none;
+  border: 2px solid;
+  border-bottom-width: 4px;
+  font: inherit;
+  letter-spacing: inherit;
+  margin: 1em;
+  padding: 1em 2em;
+  text-transform: inherit;
+  transition: color 1s;
+
+  $color: #66edb5;
+  color: $color;
+
+  &:hover {
+    animation: stripes-move 4s infinite linear;
+    background: repeating-linear-gradient(45deg, $color 0, $color 0.05em, transparent 0.05em, transparent .5em);
+    color: adjust-hue($color,180);
+  }
+
+  @keyframes stripes-move {
+    100% {
+      background-position: 5em 0px;
+    }
+  }
+}
+
+#footer {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#slide {
+    background: #555;
+    color: #fff;
+    width: 100%;
+}
+#slide-in {
+    padding: 10px;
+}
+#footer a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn5 {
+  position: relative;
+  display: inline-block;
+  transition: 0.5s;
+  line-height: 25px;
+}
+.btn5::before, .btn5::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 0;
+  border-bottom: solid 2px #f35e39;
+  transition: 0.5s;
+}
+.btn5::before{
+  top: 0;
+}
+.btn5::after{
+  bottom: 0;
+}
+.btn5:hover::before, .btn5:hover::after {
+  width: 100%;
+}
+
+.anime {
+    display:  block;                /* ブロック要素にする */
+    margin: 0 auto;                 /* 要素中央揃え */
+    position:  relative;            /* 位置指定 */
+    animation: anime1 1s ease;      /* アニメーション指定 */
+}
+
+@keyframes anime1 {
+    0% {
+        opacity:  0;                /* 透明度指定 */
+        top: 50px;                  /* 位置指定 */
+    }
+    100% {
+        opacity:  1;                /* 透明度指定 */
+        top: 0;                     /* 位置指定 */
+    }
+}
+
+.anime-i {
+    display:  block;                /* ブロック要素にする */
+    margin: 0 auto;                 /* 要素中央揃え */
+    position:  relative;            /* 位置指定 */
+    animation: anime2 0.75s ease;      /* アニメーション指定 */
+}
+
+@keyframes anime2 {
+    0% {
+        opacity:  0;                /* 透明度指定 */
+        right: 25px;                  /* 位置指定 */
+        bottom: 25px;
+    }
+    100% {
+        opacity:  1;                /* 透明度指定 */
+        right: 0;                     /* 位置指定 */
+        bottom: 0;
+    }
+}

@@ -1,0 +1,10 @@
+  <div class="contents row" >
+    <p><i class="fas fa-feather faa-burst animated"></i><i class="fas fa-feather faa-burst animated"></i><%= @nickname %>の投稿一覧<i class="fas fa-feather faa-burst animated"></i><i class="fas fa-feather faa-burst animated"></i></p>
+    <% @illustrations.each do |illustration| %>
+      <div class="content_post faa-float animated-hover" style="background-image: url(<%= illustration.image %>);">
+        <%= simple_format(illustration.text) %>
+        <span class="name"><%= @nickname %></span>
+      </div>
+    <% end %>
+    <%= paginate(@illustrations) %>
+  </div>

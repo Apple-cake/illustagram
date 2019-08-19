@@ -1,0 +1,30 @@
+<div class="contents row anime-i" >
+    <% @illustrations.each do |illustration| %>
+        <div class="content_post faa-float animated-hover" style="background-image: url(<%= illustration.image %>);">
+          <% if user_signed_in? && current_user.id == illustration.user_id %>
+            <div class="more">
+              <span><%= image_tag 'arrow_top.png' %></span>
+              <ul class="more_list">
+                <li class="btn5">
+                  <%= link_to '　 編集 　', "/illustrations/#{illustration.id}/edit", method: :get %>
+                </li>
+                <li class="btn5">
+                  <%= link_to '　 削除 　', "/illustrations/#{illustration.id}", method: :delete %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+            <%= simple_format(illustration.text) %>
+          <span class="name">
+            <a href="" class="faa-vertical animated-hover">
+              <span>投稿者:<%= illustration.user.nickname %><i class="far fa-thumbs-up"></i>
+              <div>
+                  <span id="hukidasi">いいね👍</span>
+                  </span>
+              </div>
+            </a>
+          </span>
+        </div>
+    <% end %>
+  <%= paginate(@illustrations) %>
+</div>

@@ -1,0 +1,18 @@
+  <div class="contents row anime">
+      <h3>
+        編集する
+      </h3>
+    <%= form_for @illustration do |f| %>
+      <div class="field faa-passing animated">
+        <%= f.label :image,{class:"fas fa-camera"} %><br />
+          <%= f.file_field :image, style: 'width: 100%;height: 50px'; %>
+      </div>
+      <div class="field">
+        <%= f.label :text,{class:"fas fa-pen"} %><br />
+        <%= f.text_area :text, placeholder: 'コメントを入力', style: 'width: 100%;height: 200px'; %>
+      </div>
+      <div class="actions">
+        <%= f.submit("Send",{class:"btn"} )%>
+      </div>
+    <% end %>
+  </div>
